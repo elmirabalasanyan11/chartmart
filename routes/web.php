@@ -14,10 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/{any}', function () {
+    return view('index');
+})->where('any', '.*');
 
 
-Route::get('stripe', [StripeController::class, 'stripe']);
-Route::post('stripe', [StripeController::class, 'stripePost'])->name('stripe.post');
+//Route::get('stripe', [StripeController::class, 'stripe']);
+//Route::post('stripe', [StripeController::class, 'stripePost'])->name('stripe.post');
+//
+//Auth::routes();
+//
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
